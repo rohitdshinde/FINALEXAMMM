@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -10,6 +11,33 @@ namespace FINALEXAM
 {
     internal class Program
     {
+        static void Q5()
+        {
+            Console.WriteLine("Enter a number");
+            int n = int.Parse(Console.ReadLine());
+            pail(n, n,n, 0);
+            Console.ReadKey();
+        }
+        static void pail(int n,int digit,int temp, int sum = 0)
+        {
+            if (temp== 0)
+            {
+                if (sum == n)
+                {
+                    Console.WriteLine("YES");
+                }
+                else
+                {
+                    Console.WriteLine("not");
+                }
+                return;
+            }
+            digit = temp % 10;
+            sum = sum*10 + digit;
+            temp = temp / 10;
+            pail(n, digit, temp, sum );
+           
+        }
         static void Main(string[] args)
         {
             //string path = "E:\\anime\\FINALl.bin";
@@ -91,7 +119,7 @@ namespace FINALEXAM
             //foreach (var xx in ab)
             //{
             //    Console.WriteLine(xx);
-               
+
             //}
 
 
@@ -114,11 +142,56 @@ namespace FINALEXAM
 
 
 
+            //Console.WriteLine("Enter a number");
+            //int n=int.Parse(Console.ReadLine());
 
-            Console.ReadLine();
+            //int fact = 1;
+            // for(int i = 1; i <=a; i++)
+            //{
+            //    fact=fact*i;
+            //}
+            //Console.WriteLine(fact);
+            //Console.ReadLine(); 
+
+
+            //int count = 0;
+            //for(int i=1; i<=a;i++)
+            //{
+            //    if (a % i == 0)
+            //    {
+            //        count++;
+            //    }
+
+            //}
+            //if (count == 2)
+            //{
+            //    Console.WriteLine("prime");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("not prime");
+            //}
+            //Console.ReadLine();
+
+
+            //int a=0, b=1;
+
+            //for(int i=0; i<n; i++)
+            //{
+            //    int temp = a;
+            //    a = b;
+            //    b = temp + b;
+            //    Console.WriteLine(a);
+            //}
+            //Console.ReadLine();
+
+            Program.Q5();
+            
 
 
 
+            
+           
 
 
         }
